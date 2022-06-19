@@ -18,6 +18,7 @@ body {
   background-size: contain;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 a {
@@ -146,7 +147,7 @@ nav {
 
 .periodes {
   margin-top: 100vh;
-  margin-bottom: 100vh;
+  margin-bottom: 2vh;
   width: 70%;
   border: 10px;
   border-radius: 30px;

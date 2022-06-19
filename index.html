@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="functions.js"></script>
+    <link rel="stylesheet" href="./highlight/styles/default.min.css">
+    <script src="./highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -123,6 +126,208 @@
             </p>
         </div>
     </div>
+
+    <pre><code class="language-arduino">/*joystick pins*/
+int Pin0 = A8;
+int Pin1 = A9;
+int Pin2 = A10;
+int Pin3 = A11;
+ 
+/*motor pins*/
+#define EN 8 // enable pin for all stepper output
+#define X_DIR 5 // direction-pin for X-axis
+#define X_STEP 2 // step-pin for X-axis
+#define Y_DIR 6 // direction-pin for Y-axis
+#define Y_STEP 3 // step-pin for Y-axis
+#define Z_DIR 7 // direction-pin for Z-axis
+#define Z_STEP 4 // step-pin for Z-axis
+#define A_DIR 13 // direction-pin for A-axis
+#define A_STEP 12 // step-pin for A-axis
+
+int Speed = 1;
+ 
+/* array voor info joysticks */
+/* 0 = x1, 1 = y1, 2 = x2, 3 = y2 */
+int Joystick[4];
+ 
+/*0 = rv, 1 = ra, 2 = lv, 3 = la
+som van richtingen(uiteindelijke richting)  */
+int WheelDir[4];
+ 
+/* hoeveelheid richtingen voor de joystick*/
+int NumDir = 4;
+ 
+/*4 is check, 0 tm 3 is voor motoren zoals boven aangegeven*/
+int PreviousMillis[5];
+int CheckInterval = 250;
+int MotorInterval[4];
+ 
+void setup()
+{
+  Serial.begin(115200); 
+  
+  /* pins instellen*/
+  pinMode(Pin0, INPUT);
+  pinMode(Pin1, INPUT);
+  pinMode(Pin2, INPUT);
+  pinMode(Pin3, INPUT);
+ 
+  /*motor pins instellen*/
+  pinMode(EN, OUTPUT);
+  pinMode(X_DIR, OUTPUT);
+  pinMode(X_STEP, OUTPUT);
+  pinMode(Y_DIR, OUTPUT);
+  pinMode(Y_STEP, OUTPUT);
+  pinMode(Z_DIR, OUTPUT);
+  pinMode(Z_STEP, OUTPUT);
+  pinMode(A_DIR, OUTPUT);
+  pinMode(A_STEP, OUTPUT);
+}
+ 
+void loop()
+{
+  int CurrentMillis = millis();
+ 
+  if (CurrentMillis - PreviousMillis[4] >= CheckInterval) {
+    PreviousMillis[4] = CurrentMillis;
+ 
+    /* zet de output van de joystick om in x en y directies */
+    Joystick[0] = (-map(analogRead(Pin0), 0, 1023, -512, 512))/(512/NumDir);
+    Joystick[1] = (-map(analogRead(Pin1), 0, 1023, -512, 512))/(512/NumDir);
+    Joystick[2] = (-map(analogRead(Pin2), 0, 1023, -512, 512))/(512/NumDir);
+    Joystick[3] = (-map(analogRead(Pin3), 0, 1023, -512, 512))/(512/NumDir);
+ 
+    /* loop voor alle dingen die met de motoren en snelheden daarvan te maken hebben*/
+    for (int i = 0; i < 4; i++) {
+       WheelDir[i] = ConstrainSpeed(CalcDir(i), i);
+       
+       if (WheelDir[i] != 0) {
+          MotorInterval[i] = abs(NumDir / WheelDir[i]) * Speed;      
+       } else {
+          MotorInterval[i] = 0;
+       }
+    }
+    
+    /* print de output van de joysticks */
+    Serial.print(" x1: ");
+    Serial.print(Joystick[0]);
+    Serial.print(" y1: ");
+    Serial.print(Joystick[1]);
+    Serial.print(" x2: ");
+    Serial.print(Joystick[2]);
+    Serial.print(" y2: ");
+    Serial.println(Joystick[3]);
+    
+    /* kunst */
+    Serial.print("-"); Serial.print("---"); Serial.println("--");
+    Serial.print(WheelDir[1]); Serial.print("|  |"); Serial.println(WheelDir[0]);
+    Serial.print("-"); Serial.print("---"); Serial.println("--");
+    Serial.print(WheelDir[2]); Serial.print("|  |"); Serial.println(WheelDir[3]);
+    Serial.print("-"); Serial.print("---"); Serial.println("--");
+    /* meer kunst */
+    Serial.print("-"); Serial.print("---"); Serial.println("--");
+    Serial.print(MotorInterval[1]); Serial.print("|  |"); Serial.println(MotorInterval[0]);
+    Serial.print("-"); Serial.print("---"); Serial.println("--");
+    Serial.print(MotorInterval[2]); Serial.print("|  |"); Serial.println(MotorInterval[3]);
+    Serial.print("-"); Serial.print("---"); Serial.println("--");   
+    
+  }
+
+  if (WheelDir[0] > 0) {
+    digitalWrite(Y_DIR, LOW);
+  } else {
+    digitalWrite(Y_DIR, HIGH);
+  }
+
+  if (WheelDir[1] > 0) {
+    digitalWrite(X_DIR, HIGH);
+  } else {
+    digitalWrite(X_DIR, LOW);
+  }
+
+  if (WheelDir[2] > 0) {
+    digitalWrite(Z_DIR, HIGH);
+  } else {
+    digitalWrite(Z_DIR, LOW);
+  }
+
+  if (WheelDir[3] > 0) {
+    digitalWrite(A_DIR, LOW);
+  } else {
+    digitalWrite(A_DIR, HIGH);
+  }
+
+  if (WheelDir[0] != 0) {
+    if (CurrentMillis - PreviousMillis[0] <= MotorInterval[0]) {
+        digitalWrite(Y_STEP, HIGH);
+    } else {
+        digitalWrite(Y_STEP, LOW);
+        PreviousMillis[0] = CurrentMillis;
+    }
+  }
+
+  if (WheelDir[1] != 0) {
+    if (CurrentMillis - PreviousMillis[1] <= MotorInterval[1]) {
+        digitalWrite(X_STEP, HIGH);
+    } else {
+        digitalWrite(X_STEP, LOW);
+        PreviousMillis[1] = CurrentMillis;
+    }
+  }
+
+  if (WheelDir[2] != 0) {
+    if (CurrentMillis - PreviousMillis[2] <= MotorInterval[2]) {
+        digitalWrite(Z_STEP, HIGH);
+    } else {
+        digitalWrite(Z_STEP, LOW);
+        PreviousMillis[2] = CurrentMillis;
+    }
+  }
+
+  if (WheelDir[3] != 0) {
+    if (CurrentMillis - PreviousMillis[3] <= MotorInterval[3]) {
+        digitalWrite(A_STEP, HIGH);
+    } else {
+        digitalWrite(A_STEP, LOW);
+        PreviousMillis[3] = CurrentMillis;
+    }
+  }
+}
+/* functie voor berekenen richtingen*/
+int CalcDir(int i) {
+    int Move;
+    int Turn;
+    int Sum;
+ 
+    if (i == 0 || i == 2) {
+      Move = Joystick[0] + Joystick [1];
+    } else {
+      Move = Joystick[1] - Joystick [0];
+    }
+    
+    if (i == 0 || i == 3) {
+      Turn = Joystick[2];
+    } else {
+      Turn = -Joystick[2];
+    }
+   
+    Sum = Move + Turn;
+    return Sum;  
+} 
+ 
+ 
+ 
+int ConstrainSpeed(int i, int k){
+  for (int j = 0; j < 4; j++) {
+   if (abs(CalcDir(j)) > 2*NumDir) {
+      i = CalcDir(k)/4;
+   } 
+   else if (abs(CalcDir(j)) > NumDir) {
+      i = CalcDir(k)/2;
+   }
+  }
+  return constrain(i, -NumDir, NumDir);
+}</code></pre>
 
 
 

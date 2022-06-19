@@ -4,10 +4,20 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Trebuchet MS', sans-serif;
-  display: flex;
   background-color: #161627;
+  background-image: url("./images/mountainjpg.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -24,7 +34,9 @@ nav {
   position: fixed;
   width: 100%;
   align-items: center;
-  background: #0B0A10;
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid #fff;
+  z-index: 1;
 }
 
 .logo {
@@ -54,25 +66,133 @@ nav {
 .link {
   letter-spacing: 3px;
   font-weight: bold;
+  display: inline-block;
 }
 
 .link a {
   color: rgba(255, 255, 255, 0.85);
+  padding: 10px 20px;
+  position: relative;
+}
+
+.link a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
 .link a:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(255, 255, 255);
 }
+
+.link a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+.link .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.link .dropdown .dropdownbtn p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dropdowncontent {
+  display: none;
+  position: absolute;
+  font-size: 16;
+  padding-top: 4vh;
+}
+
+.dropdowncontent a {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.link .dropdown:hover .dropdowncontent {
+  display: block;
+}
+
 
 /*NAVBAR END*/
 
-.main {
-  margin-top: 8vh;
-}
-
-.main p {
+.bg-text {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.periodes {
+  margin-top: 100vh;
+  margin-bottom: 100vh;
+  width: 70%;
+  border: 10px;
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: rgb(14, 66, 66);
+
+}
+
+.periode1 {
+  text-align: center;
+  color: white;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
+}
+
+.periode2 {
+  text-align: center;
+  color: white;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
+}
+
+.periode3 {
+  text-align: center;
+  color: white;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
+}
+
+.periode4 {
+  text-align: center;
+  color: white;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
 }

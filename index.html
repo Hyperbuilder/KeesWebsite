@@ -11,118 +11,128 @@
   <link rel="stylesheet" href="./highlight/styles/github-dark-dimmed.min.css">
   <script src="./highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <link rel="stylesheet" href="./Flickity.css" media="screen">
+  <script src="./Flickity.pkgd.min.js"></script>
 </head>
 
 <body>
-  <div class="page">
-    <nav>
-      <div class="logo">
-        <h4>Informatica</h4>
-      </div>
+  <nav>
+    <div class="logo">
+      <h4>Informatica</h4>
+    </div>
 
-      <ul class=navlinks>
-        <li class="link">
-          <div id="navstart"><a href="#">Start</a></div>
-        </li>
-        <li class="link">
-          <div class="dropdown">
-            <div class="dropdownbtn">
-              <p>Hoofdstukken <i class="fa fa-caret-down"></i></p>
-            </div>
-            <div class="dropdowncontent">
-              <a href="#periode1" class="p1">Het Idee</a>
-              <a href="#periode2">Periodes</a>
-              <a href="#periode3">Lessons learned</a>
-              <a href="#periode4">Resultaten</a>
-            </div>
-
-
+    <ul class=navlinks>
+      <li class="link">
+        <div id="navstart"><a href="#">Start</a></div>
+      </li>
+      <li class="link">
+        <div class="dropdown">
+          <div class="dropdownbtn">
+            <p>Hoofdstukken <i class="fa fa-caret-down"></i></p>
           </div>
-        </li>
-        <li class="link">
-          <div class="navcode" id="navcode"><a href="#code">Code</a></div>
-        </li>
-        <li class="link">
-          <div class="navmedia" id="navmedia"><a href="#media">Media</a></div>
-        </li>
-      </ul>
-    </nav>
+          <div class="dropdowncontent">
+            <a href="#idee">Het Idee</a>
+            <a href="#periodes">Periodes</a>
+            <a href="#periode3">Lessons learned</a>
+            <a href="#periode4">Resultaten</a>
+          </div>
+        </div>
+      </li>
+      <li class="link">
+        <div class="navcode" id="navcode"><a href="#code">Code</a></div>
+      </li>
+      <li class="link">
+        <div class="navmedia" id="navmedia"><a href="#media">Media</a></div>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="bg-text">
-      <h1>Meesrunner</h1>
-      <p>The selfdriving car that aint ridin'</p>
+  <div class="bg-text">
+    <h1>Meesrunner</h1>
+    <p>The selfdriving car that aint ridin'</p>
+  </div>
+
+  <div class="idee" id="idee">
+    <h1>Het Idee</h1>
+    <p>Ons idee is een auto die uit zichzelf een doolhof kan oplossen. Dit willen we gaan doen met acht afstandssensoren
+      die constant de afstand tot de muren meten zijn. Met deze informatie kunnen we een richting bepalen die de auto op
+      moet gaan (door middel van berekeningen). De auto zelf heeft 4 steppermotors waardoor we de auto heel precies
+      kunnen laten bewegen. Aan de motoren zitten zogenaamde “mecanum” wielen. Dit zijn wielen met rollers erop die 45°
+      graden gedraaid zijn ten opzichte van de wielas (zie de linker afbeelding). Deze wielen zorgen ervoor dat de
+      auto alle richtingen op kan rijden (rechter afbeelding geeft aan hoe). Ook willen we de auto op afstand
+      bestuurbaar maken door middel van een Playstation 4 controller te gebruiken zodat we hem ook zelf kunnen besturen.
+    </p>
+  </div>
+
+  <div class="periodes">
+    <div id="periodes" class="periode1">
+      <h1>Periode 1</h1>
+      <p>
+        In periode 1 hebben wij vooral veel plannen gemaakt en dingen ontworpen. Wij hebben deze periode dus ook veel
+        onderzoek gedaan naar welke onderdelen wij nog moesten bestellen. Wij kwamen tot de conclusie dat de arduino
+        mega met een cnc shield de beste oplossing was voor dit project. De arduino mega heeft genoeg pins om een cnc
+        shield met alle motor drivers eropaan te sluiten en mogelijk nog wat extra pins over voor andere toevoegingen
+        zoals een joystick of sensoren of een lampje. Wij hebben ook gekozen om stepper motors te gebruiken omdat er
+        al 4 van deze op school waren en dit zijn goede precieze motors. Wij wilden ook dat de auto gemakkelijk te
+        besturen was dus kozen wij voor mecanum wielen. Deze wielen kunnen in elke richting gaan als je de motoren
+        goed op elkaar afstemt. In deze periode hebben wij dus veel geleerd over de toepassingen en de werking van de
+        producten die wij gekocht hebben en wij zijn in deze periode nog niet tegen veel problemen aangelopen.
+        <br>
+        <br>
+      </p>
+      <h1>Periode 2</h1>
+      <p>
+        In periode 2 zijn wij vooral bezig geweest met 3D-printen. Wij hadden een bepaalde aansluiting nodig voor de
+        wielen op onze motoren. Deze konden wij niet online vinden dus hebben wij besloten dit te ontwerpen met een
+        3D-printer. Wij hebben het ontwerp gemaakt in het programma Fusion 360. Hiermee konden wij heel nauwkeurig
+        ontwerpen maken die precies passen, maar toen wij naar de 3D-printer gingen lukte het printen niet. Wij hebben
+        een verstopping gevonden in de slang en die hebben wij verholpen. Toen we daarna opnieuw wilden printen werkte
+        de printer nog steeds niet, toen hebben wij de hele printer uit elkaar gehaald en elk onderdeel getest en het
+        bleek dat 1 motor het niet goed deed omdat er in het moederbord een kabel was losgekomen, die hebben wij weer
+        gemaakt en de 3D-printer weer in elkaar gezet en toen hebben wij onze eerste versie van de aansluiting
+        geprint. Wij hebben in deze periode dus veel geleerd over de 3D-printer en het ontwerpen van een 3D-design. De
+        problemen waar wij tegen aan liepen was een niet werkende 3D- printer, maar dit hebben wij opgelost en hebben
+        hier in de volgende periode verder mee gewerkt.
+        <br>
+        <br>
+      </p>
+      <h1>Periode 3</h1>
+      <p>
+        In periode 3 hebben wij een eerste versie van onze code gemaakt. Deze code was niet heel complex en het was
+        eigenlijk gewoon een programma dit telkens herhaald werd. Met deze code werden alle 4 de wielen tegelijkertijd
+        aangestuurd om naar voren te rijden. We hebben ook getest met de motoren tegelijkertijd een andere kant op te
+        laten draaien, dit werkte ook. Het doel van deze code was om te testen of we alle motoren soepel
+        tegelijkertijd konden laten draaien en in verschillende richtingen. Ook hebben wij een houten ontwerp van het
+        frame gemaakt en de wielen hierop aangesloten. De auto kon nog niet ver rijden omdat hij de hele tijd zat
+        aangesloten aan een grote laboratoriumvoeding die wij van de natuurkunde docent mochten gebruiken. In periode
+        4 zijn wij opzoek gegaan naar een oplossing voor dit probleem en om hem draadloos te maken. Verder zijn wij
+        nog door gegaan met het ontwerpen van aansluitingen. De eerste paar versies waren te krap voor de motor en
+        braken telkens af als we ze op de motor drukten. Ook bleek het dat ze niet genoeg grip hadden op de motor en
+        dat ze niet aan de as bleven zitten. De oplossing voor dit hebben wij in periode 4 gevonden. In deze periode
+        hebben wij dus veel geleerd over de code van een stepper motor en we zijn tegen een paar problemen aan gelopen
+        die wij in de volgende periode hebben opgelost.
+        <br>
+        <br>
+      </p>
+      <h1>Periode 4</h1>
+      <p>
+        In periode 4 beseften wij dat onze oorspronkelijke ideeën iets te hoog gegrepen waren. Wij hebben daarom
+        besloten om de auto niet meer zelfrijdend te maken maar te besturen met een joystick. In deze periode hebben
+        wij een compleet werkende code gemaakt voor de joystick. Om het probleem van eerder op te lossen met de
+        3D-printer hebben wij besloten lijm te gebruiken tussen de aansluitingen en de assen. De lijm die wij
+        gebruikten bleef helaas niet goed zitten en wij hebben het verder werken met de wielen geschrapt. Ook hebben
+        wij een lipo batterij besteld voor de arduino. Deze zou genoeg stroom moeten leveren om hem te laten werken.
+        Verder zijn wij in deze periode vooral bezig geweest met het blog maken in html dat je nu ziet. In deze
+        periode hebben wij dus vooral de puntjes op de i gezet en onze doelen wat aangepast. De problemen waar wij
+        tegenaan liepen waren het niet werken van de aansluiting en tijd te kort.
     </div>
+  </div>
 
-    <div class="periodes">
-      <div id="periode1" class="periode1">
-        <h1>Periode 1</h1>
-        <p>
-          In periode 1 hebben wij vooral veel plannen gemaakt en dingen ontworpen. Wij hebben deze periode dus ook veel
-          onderzoek gedaan naar welke onderdelen wij nog moesten bestellen. Wij kwamen tot de conclusie dat de arduino
-          mega met een cnc shield de beste oplossing was voor dit project. De arduino mega heeft genoeg pins om een cnc
-          shield met alle motor drivers eropaan te sluiten en mogelijk nog wat extra pins over voor andere toevoegingen
-          zoals een joystick of sensoren of een lampje. Wij hebben ook gekozen om stepper motors te gebruiken omdat er
-          al 4 van deze op school waren en dit zijn goede precieze motors. Wij wilden ook dat de auto gemakkelijk te
-          besturen was dus kozen wij voor mecanum wielen. Deze wielen kunnen in elke richting gaan als je de motoren
-          goed op elkaar afstemt. In deze periode hebben wij dus veel geleerd over de toepassingen en de werking van de
-          producten die wij gekocht hebben en wij zijn in deze periode nog niet tegen veel problemen aangelopen.
-        </p>
-      </div>
-      <div id="periode2" class="periode2">
-        <h1>Periode 2</h1>
-        <p>
-          In periode 2 zijn wij vooral bezig geweest met 3D-printen. Wij hadden een bepaalde aansluiting nodig voor de
-          wielen op onze motoren. Deze konden wij niet online vinden dus hebben wij besloten dit te ontwerpen met een
-          3D-printer. Wij hebben het ontwerp gemaakt in het programma Fusion 360. Hiermee konden wij heel nauwkeurig
-          ontwerpen maken die precies passen, maar toen wij naar de 3D-printer gingen lukte het printen niet. Wij hebben
-          een verstopping gevonden in de slang en die hebben wij verholpen. Toen we daarna opnieuw wilden printen werkte
-          de printer nog steeds niet, toen hebben wij de hele printer uit elkaar gehaald en elk onderdeel getest en het
-          bleek dat 1 motor het niet goed deed omdat er in het moederbord een kabel was losgekomen, die hebben wij weer
-          gemaakt en de 3D-printer weer in elkaar gezet en toen hebben wij onze eerste versie van de aansluiting
-          geprint. Wij hebben in deze periode dus veel geleerd over de 3D-printer en het ontwerpen van een 3D-design. De
-          problemen waar wij tegen aan liepen was een niet werkende 3D- printer, maar dit hebben wij opgelost en hebben
-          hier in de volgende periode verder mee gewerkt.
-        </p>
-      </div>
-      <div id="periode3" class="periode3">
-        <h1>Periode 3</h1>
-        <p>
-          In periode 3 hebben wij een eerste versie van onze code gemaakt. Deze code was niet heel complex en het was
-          eigenlijk gewoon een programma dit telkens herhaald werd. Met deze code werden alle 4 de wielen tegelijkertijd
-          aangestuurd om naar voren te rijden. We hebben ook getest met de motoren tegelijkertijd een andere kant op te
-          laten draaien, dit werkte ook. Het doel van deze code was om te testen of we alle motoren soepel
-          tegelijkertijd konden laten draaien en in verschillende richtingen. Ook hebben wij een houten ontwerp van het
-          frame gemaakt en de wielen hierop aangesloten. De auto kon nog niet ver rijden omdat hij de hele tijd zat
-          aangesloten aan een grote laboratoriumvoeding die wij van de natuurkunde docent mochten gebruiken. In periode
-          4 zijn wij opzoek gegaan naar een oplossing voor dit probleem en om hem draadloos te maken. Verder zijn wij
-          nog door gegaan met het ontwerpen van aansluitingen. De eerste paar versies waren te krap voor de motor en
-          braken telkens af als we ze op de motor drukten. Ook bleek het dat ze niet genoeg grip hadden op de motor en
-          dat ze niet aan de as bleven zitten. De oplossing voor dit hebben wij in periode 4 gevonden. In deze periode
-          hebben wij dus veel geleerd over de code van een stepper motor en we zijn tegen een paar problemen aan gelopen
-          die wij in de volgende periode gingen oplossen.
-        </p>
-      </div>
-      <div id="periode4" class="periode4">
-        <h1>Periode 4</h1>
-        <p>
-          In periode 4 beseften wij dat onze oorspronkelijke ideeën iets te hoog gegrepen waren. Wij hebben daarom
-          besloten om de auto niet meer zelfrijdend te maken maar te besturen met een joystick. In deze periode hebben
-          wij een compleet werkende code gemaakt voor de joystick. Om het probleem van eerder op te lossen met de
-          3D-printer hebben wij besloten lijm te gebruiken tussen de aansluitingen en de assen. De lijm die wij
-          gebruikten bleef helaas niet goed zitten en wij hebben het verder werken met de wielen geschrapt. Ook hebben
-          wij een lipo batterij besteld voor de arduino. Deze zou genoeg stroom moeten leveren om hem te laten werken.
-          Verder zijn wij in deze periode vooral bezig geweest met het blog maken in html dat je nu ziet. In deze
-          periode hebben wij dus vooral de puntjes op de i gezet en onze doelen wat aangepast. De problemen waar wij
-          tegenaan liepen waren het niet werken van de aansluiting en tijd te kort.
-        </p>
-      </div>
-    </div>
+  <div class="scrollbar" id="style-1">
+    <div class="force-overflow"></div>
+  </div>
 
-    <div class="scrollbar" id="style-1">
-      <div class="force-overflow"></div>
-    </div>
-
-    <pre><code class="language-arduino codeblock" id="code">
+  <pre><code class="language-arduino codeblock" id="code">
       /*joystick pins*/
       int Pin0 = A8;
       int Pin1 = A9;
@@ -319,7 +329,7 @@
 </code></pre>
 
 
-    <pre><code class="language-arduino codeblock">
+  <pre><code class="language-arduino codeblock">
   /*Code voor het testen van de Bluetooth Module "HC-05"*/
   #include <SoftwareSerial.h> 
   SoftwareSerial Hconnect(2, 3); // RX | TX 
@@ -348,42 +358,66 @@
     } 
   } </code></pre>
 
+  <div class="media">
+    <!-- Container for the image gallery -->
+    <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+      <div class="gallery-cell">
+        <p class="text">Volledige auto (1 wiel mist door niet gelijmde as)</p><img src="./images/IMG_8774.jpg"
+          width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">Volledige auto (1 wiel mist door niet gelijmde as)</p><img src="./images/IMG_8774.jpg"
+          width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">3D-Printer Hot end verstopt</p><img src="./images/IMG_8600.jpg" width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">Extruder tube verstopt ten gevolge van verstopte hot end</p><img src="./images/IMG_8603.jpg"
+          width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">Volledige auto (1 wiel mist door niet gelijmde as)</p><img src="./images/IMG_8776.jpg"
+          width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">Custom shield test.</p><img src="./images/IMG_7656.jpg" width="100%" height="100%">
+      </div>
+      <div class="gallery-cell">
+        <p class="text">XT60 connector kabel te dik. Oplossing: zelf strippen</p><img src="./images/IMG_8783.jpg"
+          width="100%" height="100%">
+      </div>
+    </div>
 
+    <div class="videos">
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/wvGfwVudrQQ?mute=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
 
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/5XGH610Kd-U?mute=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
 
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/BC2X6rdNFvs?mute=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/bzS-Vnse1PY?mute=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/ceTwYl2EB7Q?mute=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
   </div>
+
 </body>
 
-<div class="container">
-  <div class="wrapper">
-    <img src="./images/IMG_7656.jpg">
-    <img src="./images/IMG_7657.jpg">
-    <img src="./images/IMG_8600.jpg">
-    <img src="./images/IMG_8601.jpg">
-    <img src="./images/IMG_8602.jpg">
-    <img src="./images/IMG_8603.jpg">
-    <img src="./images/IMG_8774.jpg">
-    <img src="./images/IMG_8775.jpg">
-    <img src="./images/IMG_8776.jpg">
-    <img src="./images/IMG_8781.jpg">
-    <img src="./images/IMG_8782.jpg">
-  </div>
-</div>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wvGfwVudrQQ" title="YouTube video player"
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5XGH610Kd-U" title="YouTube video player"
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BC2X6rdNFvs" title="YouTube video player"
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bzS-Vnse1PY" title="YouTube video player"
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen></iframe>
 
 </html>

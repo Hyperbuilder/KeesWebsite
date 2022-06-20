@@ -14,8 +14,8 @@ body {
   background-image: url("./images/mountainjpg.jpg");
   height: 100%;
   background-repeat: no-repeat;
-  background-attachment: local;
-  background-size: contain;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -44,7 +44,7 @@ nav {
   align-items: center;
   backdrop-filter: blur(10px);
   border-bottom: 3px solid #fff;
-  z-index: 1;
+  z-index: 100;
 }
 
 .logo {
@@ -221,4 +221,112 @@ code::-webkit-scrollbar-thumb {
 pre {
   display: flex;
   justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  animation: slide 30s infinite;
+}
+
+.container {
+  width: 65vmin;
+  overflow: hidden;
+  border: 8px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 10px 25px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vh;
+}
+
+img {
+  width: 100%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  5% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-100%);
+  }
+
+  15% {
+    transform: translateX(-100%);
+  }
+
+  20% {
+    transform: translateX(-200%);
+  }
+
+  25% {
+    transform: translateX(-200%);
+  }
+
+  30% {
+    transform: translateX(-300%);
+  }
+
+  35% {
+    transform: translateX(-300%);
+  }
+
+  40% {
+    transform: translateX(-400%);
+  }
+
+  45% {
+    transform: translateX(-400%);
+  }
+
+  50% {
+    transform: translateX(-500%);
+  }
+
+  55% {
+    transform: translateX(-500%);
+  }
+
+  60% {
+    transform: translateX(-600%);
+  }
+
+  65% {
+    transform: translateX(-600%);
+  }
+
+  70% {
+    transform: translateX(-700%);
+  }
+
+  75% {
+    transform: translateX(-700%);
+  }
+
+  80% {
+    transform: translateX(-800%);
+  }
+
+  85% {
+    transform: translateX(-800%);
+  }
+
+  90% {
+    transform: translateX(-900%);
+  }
+
+  95% {
+    transform: translateX(-900%);
+  }
+
+  100% {
+    transform: translateX(-1000%);
+  }
 }

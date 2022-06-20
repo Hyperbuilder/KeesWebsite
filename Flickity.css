@@ -4,6 +4,7 @@ https://flickity.metafizzy.co
 
 .flickity-enabled {
     position: relative;
+    color: white;
 }
 
 .flickity-enabled:focus {
@@ -14,6 +15,7 @@ https://flickity.metafizzy.co
     overflow: hidden;
     position: relative;
     height: 100%;
+    background-color: rgb(25, 55, 78);
 }
 
 .flickity-slider {
@@ -47,9 +49,9 @@ https://flickity.metafizzy.co
 
 .flickity-button {
     position: absolute;
-    background: hsla(0, 0%, 100%, 0.75);
+    background: hsla(0, 11%, 74%, 0.75);
     border: none;
-    color: #333;
+    color: rgb(255, 251, 251);
 }
 
 .flickity-button:hover {

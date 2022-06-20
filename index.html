@@ -33,8 +33,8 @@
           <div class="dropdowncontent">
             <a href="#idee">Het Idee</a>
             <a href="#periodes">Periodes</a>
-            <a href="#periode3">Lessons learned</a>
-            <a href="#periode4">Resultaten</a>
+            <a href="#lessons">Lessons learned</a>
+            <a href="#resultaten">Resultaten</a>
           </div>
         </div>
       </li>
@@ -61,6 +61,7 @@
       graden gedraaid zijn ten opzichte van de wielas (zie de linker afbeelding). Deze wielen zorgen ervoor dat de
       auto alle richtingen op kan rijden (rechter afbeelding geeft aan hoe). Ook willen we de auto op afstand
       bestuurbaar maken door middel van een Playstation 4 controller te gebruiken zodat we hem ook zelf kunnen besturen.
+    <p><img src="./images/wheel.jpg"><img src="./images/directions.jpg"></p>
     </p>
   </div>
 
@@ -126,6 +127,54 @@
         periode hebben wij dus vooral de puntjes op de i gezet en onze doelen wat aangepast. De problemen waar wij
         tegenaan liepen waren het niet werken van de aansluiting en tijd te kort.
     </div>
+  </div>
+
+  <div class="lessons" id="lessons">
+    <h1>Lessons Learned</h1>
+    <div class="lllist">
+      <ul>
+        <li class="eersteli">
+          <h2>Probleem</h2>
+          <h5>Waar zijn we tegen aan gelopen</h5>
+        </li>
+        <li>Meerdere onderdelen van 3D-printer kapot</li>
+        <li>Grip tussen Motorshaft en geprinte as</li>
+        <li>As niet precies genoeg om goed om de shaft te klemmen met lijm</li>
+        <li>HC-05 Bluetooth Module heeft andere bluetooth protocol dan ps4 controller. Geen directe connectie mogelijk
+        </li>
+        <li>Zekering op Shield doorbranden</li>
+        <li>C++ kennis</li>
+      </ul>
+      <h1>></h1>
+      <ul>
+        <li class="eersteli">
+          <h2>Oplossing</h2>
+          <h5>Wat hebben we geleerd:</h5>
+        </li>
+        <li>Hoe we voorzichtig de printer kunnen demonteren en de onderdelen kunnen testen tot het probleem is
+          vastgesteld </li>
+        <li>Lijm tussen de as en Motorshaft toevoegen om grip te verbeteren</li>
+        <li>Betere assen printen: Moeilijk want printer niet 100% nauwkeurig</li>
+        <li>HC-05 verbinden met Laptop > PS4 Controller verbinden met laptop > Data van DS4 omzetten en via Serial Port
+          naar HC-05 versturen.
+        </li>
+        <li>Vref aanpassen zodat motoren niet teveel stroom vragen en dus de zekering niet doorbranden</li>
+        <li>C++ leren via het internet</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resultaten" id="resultaten">
+    <h1>Resultaten</h1>
+    <p> Onze resultaten zijn:
+    <ul>
+      <li>4 stepper motors aangesloten op een arduino die met elkaar kunnen communiceren en
+        verschillende opdrachten kunnen uitvoeren die gegeven worden door een joystick.</li>
+      <li> Een 3D-ontwerp maken die ervoor
+        zorgt dat wij de mecanum wielen kunnen aansluiten op de assen van de stepper motors.</li>
+      <li> Een 3D-printer repareren en kalibreren en goed afstellen.</li>
+    </ul>
+    </p>
   </div>
 
   <div class="scrollbar" id="style-1">
@@ -358,7 +407,7 @@
     } 
   } </code></pre>
 
-  <div class="media">
+  <div class="media" id="media">
     <!-- Container for the image gallery -->
     <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
       <div class="gallery-cell">
@@ -414,9 +463,19 @@
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/_A2Bvw9EpI0" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="fusion">
+      <iframe src="https://sevenwolden1.autodesk360.com/shares/public/SH9285eQTcf875d3c539488d591907d7e438?mode=embed"
+        width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
+        frameborder="0"></iframe>
+      <iframe src="https://sevenwolden1.autodesk360.com/shares/public/SH9285eQTcf875d3c539032a2c4e54904087?mode=embed"
+        width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
+        frameborder="0"></iframe>
     </div>
   </div>
-
 </body>
 
 

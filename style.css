@@ -164,6 +164,7 @@ nav {
 }
 
 .idee {
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100vh;
@@ -180,6 +181,15 @@ nav {
   scroll-margin-block-end: 110px;
 }
 
+.idee img {
+  position: relative;
+  width: auto;
+  height: 25vh;
+  object-fit: contain;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 .periodes {
   margin-left: auto;
@@ -194,6 +204,62 @@ nav {
   background-color: #123540;
 }
 
+.lessons {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 2vh;
+  width: 70%;
+  border: 10px;
+  border-radius: 30px;
+  text-align: center;
+  display: block;
+  background-color: rgb(51, 39, 51);
+  color: #fff;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
+}
+
+.lllist {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.lllist ul {
+  list-style-type: disc;
+  width: 40%;
+}
+
+.lllist ul li.eersteli {
+  list-style-type: none;
+  width: 100%;
+}
+
+.lllist h1 {
+  text-align: center;
+  margin: auto;
+
+}
+
+.resultaten {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 2vh;
+  width: 70%;
+  border: 10px;
+  border-radius: 30px;
+  text-align: center;
+  display: block;
+  background-color: #384561;
+  color: #fff;
+  padding: 2%;
+  scroll-margin-block-start: 110px;
+  scroll-margin-block-end: 110px;
+}
+
 .periode1 {
   text-align: center;
   color: white;
@@ -203,36 +269,12 @@ nav {
   scroll-margin-block-end: 110px;
 }
 
-.periode2 {
-  text-align: center;
-  color: white;
-  padding: 2%;
-  scroll-margin-block-start: 110px;
-  scroll-margin-block-end: 110px;
-}
-
-.periode3 {
-  text-align: center;
-  color: white;
-  padding: 2%;
-  scroll-margin-block-start: 110px;
-  scroll-margin-block-end: 110px;
-}
-
-.periode4 {
-  text-align: center;
-  color: white;
-  padding: 2%;
-  scroll-margin-block-start: 110px;
-  scroll-margin-block-end: 110px;
-}
-
 code {
   border-radius: 20px;
   width: 60%;
   height: 50vh;
   z-index: 5;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 code::-webkit-scrollbar {
@@ -254,10 +296,38 @@ pre {
 }
 
 iframe {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4vh;
+  display: flex;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 21vh;
+  margin-left: 21vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  background-color: #1c6075;
+  border-radius: 30px;
+}
+
+.fusion {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-right: 44vh;
+  margin-left: 44vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  background-color: #3a486e;
+  border-radius: 30px;
+}
+
+.fusion iframe {
+  margin-right: 1vh;
+  margin-left: 1vh;
 }
 
 * {
@@ -267,6 +337,14 @@ iframe {
 
 .gallery {
   background: #EEE;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  background-color: rgb(25, 55, 78);
+}
+
+.gallery p {
+  margin-bottom: 0.5rem;
 }
 
 .gallery-cell {
@@ -276,12 +354,10 @@ iframe {
   counter-increment: gallery-cell;
 }
 
-
-/* cell number */
 .gallery-cell:before {
   display: block;
   text-align: center;
   line-height: 200px;
   font-size: 80px;
-  color: white;
+  color: rgb(126, 24, 24);
 }

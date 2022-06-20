@@ -21,6 +21,12 @@ body {
   flex-direction: column;
 }
 
+.page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -33,6 +39,7 @@ nav {
   justify-content: space-around;
   min-height: 8vh;
   position: fixed;
+  top: 0;
   width: 100%;
   align-items: center;
   backdrop-filter: blur(10px);
@@ -146,23 +153,23 @@ nav {
 }
 
 .periodes {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 100vh;
   margin-bottom: 2vh;
   width: 70%;
   border: 10px;
   border-radius: 30px;
   text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  background-color: rgb(14, 66, 66);
-
+  display: block;
+  background-color: #123540;
 }
 
 .periode1 {
   text-align: center;
   color: white;
   padding: 2%;
+  left: 50%;
   scroll-margin-block-start: 110px;
   scroll-margin-block-end: 110px;
 }
@@ -189,4 +196,29 @@ nav {
   padding: 2%;
   scroll-margin-block-start: 110px;
   scroll-margin-block-end: 110px;
+}
+
+code {
+  border-radius: 20px;
+  width: 60%;
+  height: 50vh;
+  z-index: 5;
+  margin-bottom: 10px;
+}
+
+code::-webkit-scrollbar {
+  width: 12px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+code::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: gray;
+  width: 12px;
+}
+
+pre {
+  display: flex;
+  justify-content: center;
 }
